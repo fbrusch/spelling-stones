@@ -1,0 +1,12 @@
+!!!
+html
+    head
+        script(src="components/angular/angular.js")
+        link(rel="stylesheet",
+            href="components/bootstrap/docs/assets/css/bootstrap.css")
+    body(ng-app)
+        div.container
+            div.row
+                span What's your name?
+                input(ng-model="name")
+                p Hello, {{name}}!
