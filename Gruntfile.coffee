@@ -28,17 +28,18 @@ module.exports = (grunt) ->
         regarde:
             coffee:
                 files: '**/*.coffee'
-                tasks: ['coffee']
+                tasks: ['coffee', 'livereload']
             jade:
                 files: '**/*.jade'
-                tasks: ['jade']
+                tasks: ['jade', 'livereload']
             less:
                 files: '**/*.less'
-                tasks: ['less']
+                tasks: ['less', 'livereload']
     )
     grunt.loadNpmTasks "grunt-contrib-coffee"
     grunt.loadNpmTasks "grunt-contrib-jade"
     grunt.loadNpmTasks "grunt-contrib-less"
+    grunt.loadNpmTasks "grunt-contrib-livereload"
     grunt.loadNpmTasks "grunt-regarde"
     grunt.registerTask "build",["jade","coffee","less"]
     grunt.registerTask "watch","regarde"
