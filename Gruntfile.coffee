@@ -29,12 +29,18 @@ module.exports = (grunt) ->
             coffee:
                 files: '**/*.coffee'
                 tasks: ['coffee', 'livereload']
+                options:
+                    livereload: yes
             jade:
                 files: '**/*.jade'
                 tasks: ['jade', 'livereload']
+                options:
+                    livereload: yes
             less:
                 files: '**/*.less'
                 tasks: ['less', 'livereload']
+                options:
+                    livereload: yes
     )
     grunt.loadNpmTasks "grunt-contrib-coffee"
     grunt.loadNpmTasks "grunt-contrib-jade"
@@ -42,7 +48,7 @@ module.exports = (grunt) ->
     grunt.loadNpmTasks "grunt-contrib-livereload"
     grunt.loadNpmTasks "grunt-contrib-watch"
     grunt.registerTask "build",["jade","coffee","less"]
-    grunt.registerTask "default", ["build", "livereload-start", "server", "watch"]
+    grunt.registerTask "default", ["build", "server", "watch"]
     grunt.registerTask "server","Start the app server", () ->
         grunt.log.writeln "Starting web server on 9001",
             require("./server.coffee").listen(9001)
