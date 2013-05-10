@@ -7,5 +7,8 @@ It offers some grunt tasks:
 
     build
     server
-    watch
+    watch,
+
+along with a *default* task that runs an overall build, fires a server, and then watches for changes.
+
 
