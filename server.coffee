@@ -6,9 +6,13 @@ logger = new winston.Logger
                     timestamp:true
             ]
 
+
+lrSnippet = require('grunt-contrib-livereload/lib/utils').livereloadSnippet
+
 app = express()
 port = 8001
 
+app.use(lrSnippet)
 app.use(express.logger())
 app.use(express.static(__dirname))
 

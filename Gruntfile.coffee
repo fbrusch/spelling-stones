@@ -25,7 +25,7 @@ module.exports = (grunt) ->
                 src: ['*.jade']
                 dest: '.'
                 ext: '.html'
-        regarde:
+        watch:
             coffee:
                 files: '**/*.coffee'
                 tasks: ['coffee', 'livereload']
@@ -40,9 +40,9 @@ module.exports = (grunt) ->
     grunt.loadNpmTasks "grunt-contrib-jade"
     grunt.loadNpmTasks "grunt-contrib-less"
     grunt.loadNpmTasks "grunt-contrib-livereload"
-    grunt.loadNpmTasks "grunt-regarde"
+    grunt.loadNpmTasks "grunt-contrib-watch"
     grunt.registerTask "build",["jade","coffee","less"]
-    grunt.registerTask "watch","regarde"
+    grunt.registerTask "default", ["build", "livereload-start", "server", "watch"]
     grunt.registerTask "server","Start the app server", () ->
         grunt.log.writeln "Starting web server on 9001",
             require("./server.coffee").listen(9001)
