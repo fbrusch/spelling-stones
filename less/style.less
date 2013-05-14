@@ -1,0 +1,93 @@
+.rounded-corners (@radius: 5px)
+{
+    /*border-radius: @radius;*/
+}
+
+.softened (@distance: 10px)
+{
+    /*margin: 3*@distance;*/
+    padding: @distance;
+}
+
+.app-section
+{
+    .rounded-corners;
+    .softened;
+}
+
+.container(@screen-height: 500px)
+{
+    height: @screen-height;
+}
+
+
+.row
+{
+    position: fixed;
+    width: 100%;
+}
+
+.clear
+{
+    clear: both;
+}
+
+div.sidebar
+{
+    .app-section;
+    height: 100%;
+    background-color: #f8e8f0;
+
+}
+
+div.main
+{
+    .app-section;
+    background-color: #f0f0f0;
+}
+
+.span3
+{
+    float: left;
+    height:100%;
+    width: 25%;
+}
+
+.span9
+{
+    float: left;
+    width: 75%;
+}
+
+.text
+{
+    font-family: Georgia;
+    font-size: 30px;
+    line-height: 1.6em;
+}
+
+.text-small
+{
+    font-size: 15px;
+}
+
+
+textarea.stones
+{
+    height: 30px;
+    width: 80%;
+    background-color: transparent;
+    border: 0px;
+    .text-small;
+}
+
+body
+{
+    .text;
+}
+
+
+li
+{
+    line-height: 1.6em;
+}

@@ -50,6 +50,7 @@ module.exports = (grunt) ->
     grunt.registerTask "build",["jade","coffee","less"]
     grunt.registerTask "default", ["build", "server", "watch"]
     grunt.registerTask "server","Start the app server", () ->
+        delete require.cache["./server.coffee"]
         grunt.log.writeln "Starting web server on 9001",
             require("./server.coffee").listen(9001)
 

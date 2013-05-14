@@ -1,3 +1,6 @@
+spellingStones = require("./src/spelling-stones.coffee")
+spellWith = spellingStones.spellWith
+spelledWords = spellingStones.spelledWords
 express = require("express")
 winston = require("winston")
 logger = new winston.Logger
@@ -17,6 +20,13 @@ app.use(express.logger())
 app.use(express.static(__dirname))
 
 #app.get "/hello", (req, res, next) -> res.send("ciao")
+
+app.get "/spellWith", (req, res) ->
+    stones = JSON.parse(req.query.stones)
+    res.send spellWith(req.query.word, stones)
+
+app.get "/name", (req, res) ->
+    res.send {name: "Francesco"}
 
 module.exports = app
 

@@ -1,0 +1,63 @@
+.app-section {
+  /*border-radius: @radius;*/
+
+  /*margin: 3*@distance;*/
+
+  padding: 10px;
+}
+.row {
+  position: fixed;
+  width: 100%;
+}
+.clear {
+  clear: both;
+}
+div.sidebar {
+  /*border-radius: @radius;*/
+
+  /*margin: 3*@distance;*/
+
+  padding: 10px;
+  height: 100%;
+  background-color: #f8e8f0;
+}
+div.main {
+  /*border-radius: @radius;*/
+
+  /*margin: 3*@distance;*/
+
+  padding: 10px;
+  background-color: #f0f0f0;
+}
+.span3 {
+  float: left;
+  height: 100%;
+  width: 25%;
+}
+.span9 {
+  float: left;
+  width: 75%;
+}
+.text {
+  font-family: Georgia;
+  font-size: 30px;
+  line-height: 1.6em;
+}
+.text-small {
+  font-size: 15px;
+}
+textarea.stones {
+  height: 30px;
+  width: 80%;
+  background-color: transparent;
+  border: 0px;
+  font-size: 15px;
+}
+body {
+  font-family: Georgia;
+  font-size: 30px;
+  line-height: 1.6em;
+}
+li {
+  line-height: 1.6em;
+}

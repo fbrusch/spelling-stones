@@ -2,11 +2,30 @@
 html
     head
         script(src="components/angular/angular.js")
-        link(rel="stylesheet",
+        script(src="components/angular-resource/angular-resource.js")
+        script(src="js/app.js")
+        //-link(rel="stylesheet",
             href="components/bootstrap/docs/assets/css/bootstrap.css")
-    body(ng-app)
+        link(rel="stylesheet",href="css/style.css")
+    body(ng-app="spelling-stones",ng-controller="MainController")
         div.container
             div.row
-                span What's your name?
-                input(ng-model="name")
-                p Hello, {{name}}!
+                div.span3
+                    div.sidebar
+                        textarea.stones(type="text",ng-model="stones")
+                        input(ng-model="word1")
+                        input(ng-model="word2")
+                div.span9
+                    div.main
+                        p
+                            | "Non sono le prime che vedo", disse Tuppence.
+                            | "Di solito formano un nome". Forse '{{word1}}'.
+                            | {{spelledWord1}}, no, non è '{{word1}}' 
+                            | Non penso potrebbe esserlo. Non riesco ad immaginare qualcuno
+                            | che fa a Zia Ada un regalo che forma la parola '{{word1}}'.
+                            | {{pick(2,stones)}} - è difficile perché non sai mai da dove
+                            | iniziare. Fammi riprovare.  {{spelli2(word2)}}. Ecco, ma certo, è {{word2}}!
+                            | Carino, davvero. Così antiquato e sentimentale.
+                div.clear
+
+
