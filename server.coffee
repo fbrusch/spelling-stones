@@ -28,6 +28,11 @@ app.get "/spellWith", (req, res) ->
 app.get "/name", (req, res) ->
     res.send {name: "Francesco"}
 
+app.get "/spelledWords", (req, res) ->
+    stones = JSON.parse req.query.stones
+    stonesFirstLetters = [x.charAt(0) for x in stones]
+    res.send spelledWords(stonesFirstLetters)
+
 module.exports = app
 
 if require.main == module
